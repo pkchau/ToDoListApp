@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Arimo|Pacifico" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>All Tasks</title>
+</head>
+
+<body>
+	<!--Top icons-->
+	<div class="topicons">
+		<img src="apartment.png">
+		<img class="settingsicon" src="settings.png">
+	</div>
+	<h1 class="apt-title">The MHCIers Apt</h1>
+	<h2 class="subtitle">All Tasks</h2>
+	<br>
+
+	<!--Task Nav-->
+	<div class="container tasknav">
+		<button type ="button" class="col-sm-4 btn btn-primary mytasks">My Tasks</button>
+		<button type ="button" class="col-sm-4 btn btn-primary active alltasks">All Tasks</button>
+		<button type ="button" class="col-sm-4 btn btn-primary history">History</button>
+	</div>
+	<br>
+
+	<!--List-->
+	<ul class="list-group">
+		<li class="list-group-item list-titles row">
+			<span class="col-xs-3 item-title">Items</span>
+			<span class="col-xs-3">Assign</span>
+			<span class="col-xs-1">Pts</span>
+			<span class="col-xs-2">Due</span>
+		</li>
+		<li class="list-group-item reversecompleted-item row">
+			<div class="earned-points"></div>
+			<button type="button" class="round-button complete-button"></button>
+			<span class="col-xs-3 item">Buy Milk</span>
+			<span class="col-xs-3 person"><button type="button" class="btn btn-primary glyphicon glyphicon-user assign-btn"> <span class="button-font">Me</span></button></span>
+			<span class="col-xs-1 points">5</span>
+			<span class="col-xs-2 date">Today</span>
+			<br><br>
+			<div class="undo-complete"></div>
+		</li>
+		<li class="list-group-item reversecompleted-item row">
+			<div class ="earned-points"></div>
+			<button type="button" class="round-button complete-button"></button>
+				<span class="col-xs-3 item">Buy Eggs</span>
+				<span class="col-xs-3 person"><button type="button" class="btn btn-primary glyphicon glyphicon-user assign-btn"> <span class="button-font">Me</span></button></span>
+				<span class="col-xs-1 points">5</span>
+				<span class="col-xs-2 date">Today</span>
+				<br><br>
+				<div class="undo-complete"></div>
+		</li>
+		<li class="list-group-item reversecompleted-item row">
+			<div class ="earned-points"></div>
+			<button type="button" class="round-button complete-button"></button>
+				<span class="col-xs-3 item">Swiffer Kitchen<br></span>
+				<span class="col-xs-3 person"><button type="button" class="btn btn-primary glyphicon glyphicon-user assign-btn"> <span class="button-font">Jenny</span></button></span>
+				<span class="col-xs-1 points">10</span>
+				<span class="col-xs-2 date">9/26</span>
+				<br><br>
+				<div class="undo-complete"></div>
+		</li>
+		<li class="list-group-item reversecompleted-item row">
+			<div class ="earned-points"></div>
+			<button type="button" class="round-button complete-button"></button>
+				<span class="col-xs-3 item">Pay Elec Bill<br></span>
+				<span class="col-xs-3 person"><button type="button" class="btn btn-primary glyphicon glyphicon-user assign-btn"> <span class="button-font">Jack</span></button></span>
+				<span class="col-xs-1 points">15</span>
+				<span class="col-xs-2 date">10/1</span>
+				<br><br>
+				<div class="undo-complete"></div>
+		</li>
+	</ul>
+
+	<!--Assign Task Dropdown-->
+	<div id="dialog">
+		<select>
+			<option value="1">Me</option>
+			<option value="2">Jenny</option>
+			<option value="3">Jack</option>
+		</select>
+		<button type="button" class="btn btn-primary submitassign">Submit</button>
+	</div>
+
+	<!--Add Task button-->
+	<div class="addtaskdiv">
+		<br>
+		<button type="button" class="btn btn-primary addtaskbtn">Add Task</button>
+		<br>
+	</div>
+
+	<!--Task Window Overlay-->
+	<div id="addtask" class="overlay">
+		<div class="overlay-content">
+			<h1 class="subtitle">Add Task</h1>
+			<form class="form-horizontal col-md-10">
+			  <div class="form-group">
+			    <label for="name" class="addtitle">Task Name</label>
+			    <input type="name" class="form-control" id="name">
+			  </div>
+			  <div class="form-group">
+					<div class="ui-field-contain">
+				    <label for="assign" class="addtitle">Assign to</label>
+				    <select name="assign" id="assign">
+				        <option value="1">Me</option>
+				        <option value="2">Jenny</option>
+				        <option value="3">Jack</option>
+				    </select>
+					</div>
+			  </div>
+			  <div class="form-group">
+			    <label for="due" class="addtitle">Due Date</label>
+			    <input type="due" class="form-control" id="due">
+			  </div>
+				<div class="form-group">
+					<div class="ui-field-contain">
+				    <label for="repeat" class="addtitle">Repeats Every</label>
+				    <select name="repeat" id="repeat">
+				        <option value="1">Day</option>
+				        <option value="2">Week</option>
+				        <option value="3">Month</option>
+								<option value="4">Year</option>
+				    </select>
+					</div>
+			  </div>
+				<div class="form-group">
+					<div class="ui-field-contain">
+				    <label for="points" class="addtitle">Point Value</label>
+				    <select name="points" id="points">
+				        <option value="1">1</option>
+				        <option value="2">2</option>
+				        <option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+								<option value="6">6</option>
+								<option value="7">7</option>
+								<option value="8">8</option>
+								<option value="9">9</option>
+								<option value="10">10</option>
+				    </select>
+					</div>
+			</form>
+			<br>
+			<div class="action-buttons">
+			<button type="button" class="btn btn-primary cancel" onclick="goBack()">Cancel</button>
+			<button type="button" class="btn btn-primary submitalltasks">Submit</button>
+			</div>
+		</div>
+	</div>
+
+	<!--Bottom navigation bar-->
+	<div class="container mainnav">
+		<button type="button" class="col-md-offset-2 col-sm-2 btn btn-primary active">Tasks</button>
+		<button type="button" class="col-sm-2 btn btn-primary">Money</button>
+		<button type="button" class="col-sm-2 btn btn-primary">Rewards</button>
+		<button type="button" class="col-sm-2 btn btn-primary">Roomies</button>
+	</div>
+
+	<!--Scripts-->
+	<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script type = "text/javascript" src="scripts.js"></script>
+</body>
+</html>
